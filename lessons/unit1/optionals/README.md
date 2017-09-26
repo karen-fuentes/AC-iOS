@@ -120,6 +120,7 @@ Note, we no longer have to initialize `temperature`. Or more accurately, `temper
 Declare one each of an optional `String`, `Int`, and a `Double`.
 <details>
 	<summary>A solution</summary>
+	
 ```swift
 var middleName: String?
 var zipCode: Int?
@@ -418,7 +419,7 @@ else {
 	}
 
 	// same-line implementation
-	if let firstName = firstName, lastName = lastName {
+	if let firstName = firstName, let lastName = lastName {
 		print("Name: \(firstName) \(lastName)")
 	}
 	else {
@@ -562,7 +563,7 @@ You can also attempt to set a property’s value through optional chaining.
 If you combine optional chaining with a method that would change the type the optional is wrapping, then you get modification in place. If the optional is `nil` then nothing happens, and the program continues executing.
 
 ```swift
-lastName?.appendContentsOf(", Esq.")
+lastName?.append(contentsOf: ", Esq.")
 lastName?.removeAll()
 
 // -AND-
